@@ -1,0 +1,7 @@
+default: SSD1315
+build_dir: C:/ncs/v2.7.0/zephyr/SSD1315/SSD1315/build
+domains:
+  - name: SSD1315
+    build_dir: C:/ncs/v2.7.0/zephyr/SSD1315/SSD1315/build/SSD1315
+flash_order:
+  - SSD1315
