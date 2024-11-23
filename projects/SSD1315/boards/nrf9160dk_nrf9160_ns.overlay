@@ -1,0 +1,16 @@
+&i2c2 {
+    ssd1315: ssd1315@3c {
+        status = "okay";
+        compatible = "custom,ssd1315";  // Treiberkompatibilität
+        reg = <0x3C>;                   // I2C-Adresse des Displays
+
+        height = <64>;
+        width = <128>;
+        segment-offset = <0x00>;       // Spalten-Offset
+        page-offset = <0x00>;          // Seiten-Offset
+        display-offset = <0x00>;       // Anzeige-Offset
+        multiplex-ratio = <0x3F>;      // Multiplex-Ratio (64 Zeilen)
+        prechargep = <2>;              // Dauer der Pre-Charge-Periode
+        ready-time-ms = <10>;          // Zeit bis das Display bereit ist
+    };
+};
