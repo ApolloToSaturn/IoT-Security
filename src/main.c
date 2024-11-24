@@ -71,32 +71,6 @@ void SSD1315_ClearScreen(SSD1315_Object_t *pObj, uint8_t color) {
 }
 
 
-void SSD1315_DrawNumberOne(SSD1315_Object_t *pObj, uint8_t x, uint8_t y, uint8_t color) {
-    // Bitmap für die Zahl '1' im 5x7-Font
-    const uint8_t numberOne[5] = {
-        0x00, //     
-        0x42, //  *  *
-        0x7F, //  *****
-        0x40, //  *    
-        0x00  //      
-    };
-
-    // Zeichne die Bitmap für '1'
-    for (uint8_t i = 0; i < 5; i++) {
-        uint8_t line = numberOne[i];
-        for (uint8_t j = 0; j < 8; j++) {
-            if (line & (1 << j)) {
-                SSD1315_SetPixel(pObj, x + i, y + j, color);
-            } else {
-                SSD1315_SetPixel(pObj, x + i, y + j, !color);
-            }
-        }
-    }
-}
-
-
-
-
 int main(void) {
     LOG_INF("Starting SSD1315 application");
 
@@ -122,23 +96,8 @@ int main(void) {
     k_sleep(K_SECONDS(1));
 
 
-    for (int page = 0; page < 8; page++) { // 8 Seiten insgesamt
-        SSD1315_SetPage(&ssd1315_obj, page);
-        SSD1315_SetColumn(&ssd1315_obj, 0);
-        if (page >= 4 && page < 7) { // Nur Seiten 4 bis 6 enthalten Logodaten
-            for (int col = 0; col < hbrslogo_width / 8; col++) { // 128 Pixel / 8 Pixel pro Byte = 16 Bytes pro Seite
-                uint8_t data = hbrslogo_bits[(page - 4) * (hbrslogo_width / 8) + col];
-                // Daten an das Display senden (mithilfe von I2C_WriteReg)
-                I2C_WriteReg(0x40, &data, 1); // 0x40 ist der Datenbefehl für SSD1315
-            }
-        } else {
-            // Leere Zeilen senden
-            for (int col = 0; col < hbrslogo_width / 8; col++) {
-                uint8_t data = 0x00;
-                I2C_WriteReg(0x40, &data, 1); 
-            }
-        }
-    }
+    SSD1315_DrawBitmap(&ssd1315_obj, 0, 0, hbrslogo_bits);
+    
     SSD1315_Refresh(&ssd1315_obj);
 
     while (1) {
