@@ -30,4 +30,4 @@ empty_file.o: C:/ncs/v2.7.0/zephyr/misc/empty_file.c \
  C:/ncs/v2.7.0/zephyr/boards/nordic/nrf9160dk/nrf9160dk_nrf9160_partition_conf.dtsi \
  C:/ncs/v2.7.0/zephyr/boards/nordic/nrf9160dk/nrf9160dk_nrf9160_ns_0_14_0.overlay \
  C:/ncs/v2.7.0/zephyr/boards/nordic/nrf9160dk/nrf9160dk_nrf9160_common_0_14_0.dtsi \
- C:/ncs/v2.7.0/projects/SSD1315/boards/nrf9160dk_nrf9160_ns.overlay
+ C:/ncs/IoT-Security/projects/SSD1315/boards/nrf9160dk_nrf9160_ns.overlay

@@ -39,31 +39,31 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/lib/bin/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/lib/bin/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/lib/nrf_modem_lib/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/lib/nrf_modem_lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/lib/flash_patch/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/lib/flash_patch/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/lib/fatal_error/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/lib/fatal_error/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/lib/modem_antenna/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/lib/modem_antenna/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/lib/boot_banner/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/lib/boot_banner/cmake_install.cmake")
 endif()
 

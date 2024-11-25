@@ -39,236 +39,236 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/arch/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/arch/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/lib/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/soc/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/soc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/boards/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/boards/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/subsys/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/subsys/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/drivers/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/drivers/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/nrf/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/nrf/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/mcuboot/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/mcuboot/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/mbedtls/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/mbedtls/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/trusted-firmware-m/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/trusted-firmware-m/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/cjson/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/cjson/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/azure-sdk-for-c/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/azure-sdk-for-c/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/cirrus-logic/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/cirrus-logic/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/openthread/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/openthread/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/suit-processor/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/suit-processor/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/memfault-firmware-sdk/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/memfault-firmware-sdk/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/canopennode/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/canopennode/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/chre/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/chre/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/lz4/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/lz4/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/nanopb/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/nanopb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/zscilib/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/zscilib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/cmsis/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/cmsis/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/cmsis-dsp/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/cmsis-dsp/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/cmsis-nn/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/cmsis-nn/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/fatfs/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/fatfs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/hal_nordic/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/hal_nordic/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/hal_st/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/hal_st/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/hal_wurthelektronik/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/hal_wurthelektronik/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/libmetal/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/libmetal/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/liblc3/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/liblc3/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/littlefs/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/littlefs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/loramac-node/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/loramac-node/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/lvgl/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/lvgl/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/mipi-sys-t/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/mipi-sys-t/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/nrf_hw_models/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/nrf_hw_models/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/open-amp/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/open-amp/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/picolibc/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/picolibc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/segger/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/segger/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/tinycrypt/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/tinycrypt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/uoscore-uedhoc/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/uoscore-uedhoc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/zcbor/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/zcbor/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/nrfxlib/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/nrfxlib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/connectedhomeip/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/connectedhomeip/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/kernel/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/kernel/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/cmake/flash/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/cmake/flash/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/cmake/usage/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/cmake/usage/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/zephyr/cmake/reports/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/zephyr/cmake/reports/cmake_install.cmake")
 endif()
 

@@ -39,236 +39,236 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/arch/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/arch/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/lib/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/soc/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/soc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/boards/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/boards/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/subsys/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/subsys/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/drivers/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/drivers/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/mcuboot/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/mcuboot/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/mbedtls/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/mbedtls/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/trusted-firmware-m/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/trusted-firmware-m/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/cjson/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/cjson/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/azure-sdk-for-c/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/azure-sdk-for-c/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/cirrus-logic/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/cirrus-logic/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/openthread/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/openthread/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/suit-processor/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/suit-processor/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/memfault-firmware-sdk/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/memfault-firmware-sdk/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/canopennode/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/canopennode/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/chre/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/chre/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/lz4/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/lz4/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nanopb/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nanopb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/zscilib/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/zscilib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/cmsis/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/cmsis/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/cmsis-dsp/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/cmsis-dsp/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/cmsis-nn/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/cmsis-nn/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/fatfs/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/fatfs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/hal_nordic/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/hal_nordic/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/hal_st/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/hal_st/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/hal_wurthelektronik/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/hal_wurthelektronik/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/libmetal/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/libmetal/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/liblc3/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/liblc3/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/littlefs/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/littlefs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/loramac-node/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/loramac-node/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/lvgl/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/lvgl/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/mipi-sys-t/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/mipi-sys-t/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf_hw_models/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf_hw_models/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/open-amp/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/open-amp/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/picolibc/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/picolibc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/segger/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/segger/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/tinycrypt/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/tinycrypt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/uoscore-uedhoc/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/uoscore-uedhoc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/zcbor/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/zcbor/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrfxlib/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrfxlib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/connectedhomeip/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/connectedhomeip/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/kernel/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/kernel/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/cmake/flash/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/cmake/flash/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/cmake/usage/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/cmake/usage/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/zephyr/cmake/reports/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/zephyr/cmake/reports/cmake_install.cmake")
 endif()
 

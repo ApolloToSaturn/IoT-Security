@@ -1,3 +1,11 @@
+C:\ncs\IoT-Security\projects\i2c_scanner\build\Kconfig\Kconfig.dts
+C:\ncs\IoT-Security\projects\i2c_scanner\build\Kconfig\Kconfig.modules
+C:\ncs\IoT-Security\projects\i2c_scanner\build\Kconfig\Kconfig.shield
+C:\ncs\IoT-Security\projects\i2c_scanner\build\Kconfig\Kconfig.shield.defconfig
+C:\ncs\IoT-Security\projects\i2c_scanner\build\Kconfig\arch\Kconfig
+C:\ncs\IoT-Security\projects\i2c_scanner\build\Kconfig\soc\Kconfig
+C:\ncs\IoT-Security\projects\i2c_scanner\build\Kconfig\soc\Kconfig.defconfig
+C:\ncs\IoT-Security\projects\i2c_scanner\build\Kconfig\soc\Kconfig.soc
 C:\ncs\toolchains\ce3b5ff664\opt\zephyr-sdk\cmake\zephyr\Kconfig
 C:\ncs\v2.7.0\modules\crypto\oberon-psa-crypto\Kconfig.oberon_psa_crypto
 C:\ncs\v2.7.0\modules\hal\cirrus-logic\Kconfig
@@ -359,14 +367,6 @@ C:\ncs\v2.7.0\nrfxlib\nrf_modem\Kconfig
 C:\ncs\v2.7.0\nrfxlib\nrf_rpc\Kconfig
 C:\ncs\v2.7.0\nrfxlib\openthread\Kconfig
 C:\ncs\v2.7.0\nrfxlib\zboss\Kconfig
-C:\ncs\v2.7.0\projects\i2c_scanner\build\Kconfig\Kconfig.dts
-C:\ncs\v2.7.0\projects\i2c_scanner\build\Kconfig\Kconfig.modules
-C:\ncs\v2.7.0\projects\i2c_scanner\build\Kconfig\Kconfig.shield
-C:\ncs\v2.7.0\projects\i2c_scanner\build\Kconfig\Kconfig.shield.defconfig
-C:\ncs\v2.7.0\projects\i2c_scanner\build\Kconfig\arch\Kconfig
-C:\ncs\v2.7.0\projects\i2c_scanner\build\Kconfig\soc\Kconfig
-C:\ncs\v2.7.0\projects\i2c_scanner\build\Kconfig\soc\Kconfig.defconfig
-C:\ncs\v2.7.0\projects\i2c_scanner\build\Kconfig\soc\Kconfig.soc
 C:\ncs\v2.7.0\zephyr\Kconfig
 C:\ncs\v2.7.0\zephyr\Kconfig.zephyr
 C:\ncs\v2.7.0\zephyr\arch\Kconfig

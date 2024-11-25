@@ -39,41 +39,41 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/subsys/nrf_security/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/subsys/nrf_security/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/subsys/net/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/subsys/net/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/subsys/dfu/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/subsys/dfu/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/subsys/mpsl/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/subsys/mpsl/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/subsys/shell/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/subsys/shell/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/subsys/debug/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/subsys/debug/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/subsys/partition_manager/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/subsys/partition_manager/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/modules/nrf/subsys/suit/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/modules/nrf/subsys/suit/cmake_install.cmake")
 endif()
 

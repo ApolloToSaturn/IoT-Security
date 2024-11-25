@@ -234,7 +234,7 @@ rule C_COMPILER__tfm_s_scatter_MinSizeRel
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\ncs\toolchains\ce3b5ff664\opt\bin\cmake.exe --regenerate-during-build -SC:\ncs\v2.7.0\modules\tee\tf-m\trusted-firmware-m -BC:\ncs\v2.7.0\projects\SSD1315\build\tfm
+  command = C:\ncs\toolchains\ce3b5ff664\opt\bin\cmake.exe --regenerate-during-build -SC:\ncs\v2.7.0\modules\tee\tf-m\trusted-firmware-m -BC:\ncs\IoT-Security\projects\SSD1315\build\tfm
   description = Re-running CMake...
   generator = 1
 

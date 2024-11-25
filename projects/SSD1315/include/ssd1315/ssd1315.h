@@ -91,7 +91,7 @@ typedef struct
   /* Drawing functions*/
   int32_t ( *SetCursor       ) (SSD1315_Object_t*, uint32_t, uint32_t);
   int32_t ( *DrawBitmap      ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t *);
-  int32_t ( *ShiftBitmap     ) (SSD1315_Object_t*,uint16_t, uint16_t, int16_t, int16_t, uint8_t*);
+  int32_t ( *ShiftBitmap     ) (SSD1315_Object_t*, uint16_t, uint16_t, int16_t, int16_t, uint8_t*);
   int32_t ( *FillRGBRect     ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t*, uint32_t, uint32_t);
   int32_t ( *DrawHLine       ) (SSD1315_Object_t*, uint32_t, uint32_t, uint32_t, uint32_t);
   int32_t ( *DrawVLine       ) (SSD1315_Object_t*, uint32_t, uint32_t, uint32_t, uint32_t);

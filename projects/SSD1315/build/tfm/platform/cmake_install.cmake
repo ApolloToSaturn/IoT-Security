@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/ncs/v2.7.0/projects/SSD1315/build/tfm/api_ns")
+  set(CMAKE_INSTALL_PREFIX "C:/ncs/IoT-Security/projects/SSD1315/build/tfm/api_ns")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/SSD1315/build/tfm/platform/target/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/SSD1315/build/tfm/platform/target/cmake_install.cmake")
 endif()
 

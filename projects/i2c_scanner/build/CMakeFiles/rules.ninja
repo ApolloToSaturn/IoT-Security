@@ -663,7 +663,7 @@ rule C_STATIC_LIBRARY_LINKER__kernel_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\ncs\toolchains\ce3b5ff664\opt\bin\cmake.exe --regenerate-during-build -SC:\ncs\v2.7.0\projects\i2c_scanner -BC:\ncs\v2.7.0\projects\i2c_scanner\build
+  command = C:\ncs\toolchains\ce3b5ff664\opt\bin\cmake.exe --regenerate-during-build -SC:\ncs\IoT-Security\projects\i2c_scanner -BC:\ncs\IoT-Security\projects\i2c_scanner\build
   description = Re-running CMake...
   generator = 1
 

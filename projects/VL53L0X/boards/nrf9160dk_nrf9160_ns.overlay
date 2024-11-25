@@ -1,0 +1,8 @@
+&i2c2 {  // Ändere hier den richtigen I²C-Bus (z. B. i2c1, i2c2)
+    status = "okay";  // Aktiviere den I²C-Bus
+
+    vl53l0X: vl53l0x@29 {  // I²C-Adresse des VL53L0X-Sensors
+        compatible = "st,vl53l0x";  // Kompatibilitätseintrag
+        reg = <0x29>;  // I²C-Adresse (Standard 0x29)
+    };
+};

@@ -39,21 +39,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/nrf/drivers/hw_cc3xx/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/nrf/drivers/hw_cc3xx/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/nrf/drivers/entropy/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/nrf/drivers/entropy/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/nrf/drivers/serial/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/nrf/drivers/serial/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/ncs/v2.7.0/projects/i2c_scanner/build/modules/nrf/drivers/flash/cmake_install.cmake")
+  include("C:/ncs/IoT-Security/projects/i2c_scanner/build/modules/nrf/drivers/flash/cmake_install.cmake")
 endif()
 

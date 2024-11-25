@@ -408,7 +408,6 @@ int32_t SSD1315_Refresh(SSD1315_Object_t *pObj)
   * @param  pBmp Bmp picture address.
   * @retval The component status.
   */
-
 int32_t SSD1315_DrawBitmap(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pBmp)
 {
   int32_t  ret = SSD1315_OK;

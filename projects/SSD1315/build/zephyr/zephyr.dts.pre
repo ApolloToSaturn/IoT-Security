@@ -1136,7 +1136,7 @@ arduino_spi: &spi3 {
 };
 # 8 "C:/ncs/v2.7.0/zephyr/boards/nordic/nrf9160dk/nrf9160dk_nrf9160_ns_0_14_0.overlay" 2
 # 0 "<command-line>" 2
-# 1 "C:/ncs/v2.7.0/projects/SSD1315/boards/nrf9160dk_nrf9160_ns.overlay" 1
+# 1 "C:/ncs/IoT-Security/projects/SSD1315/boards/nrf9160dk_nrf9160_ns.overlay" 1
 &i2c2 {
     ssd1315: ssd1315@3c {
         status = "okay";
