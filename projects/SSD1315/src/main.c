@@ -7,6 +7,8 @@
 #include "i2c_scanner.h"
 #include "ssd1315.h"
 
+#include "hbrslogo.h"
+
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 const struct device *i2c_dev = DEVICE_DT_GET(DT_NODELABEL(i2c2));
@@ -62,34 +64,6 @@ SSD1315_IO_t ssd1315_io = {
     .GetTick = (int32_t (*)(void))k_uptime_get_32 // Zephyr-Zeitfunktion
 };
 
-void SSD1315_ClearScreen(SSD1315_Object_t *pObj, uint8_t color) {
-    SSD1315_FillRect(pObj, 0, 0, SSD1315_LCD_PIXEL_WIDTH, SSD1315_LCD_PIXEL_HEIGHT, color);
-    SSD1315_Refresh(pObj);
-}
-
-
-void SSD1315_DrawNumberOne(SSD1315_Object_t *pObj, uint8_t x, uint8_t y, uint8_t color) {
-    // Bitmap für die Zahl '1' im 5x7-Font
-    const uint8_t numberOne[5] = {
-        0x00, //     
-        0x42, //  *  *
-        0x7F, //  *****
-        0x40, //  *    
-        0x00  //      
-    };
-
-    // Zeichne die Bitmap für '1'
-    for (uint8_t i = 0; i < 5; i++) {
-        uint8_t line = numberOne[i];
-        for (uint8_t j = 0; j < 8; j++) {
-            if (line & (1 << j)) {
-                SSD1315_SetPixel(pObj, x + i, y + j, color);
-            } else {
-                SSD1315_SetPixel(pObj, x + i, y + j, !color);
-            }
-        }
-    }
-}
 
 int main(void) {
     LOG_INF("Starting SSD1315 application");
@@ -110,9 +84,7 @@ int main(void) {
     LOG_INF("SSD1315 initialized successfully");
 
     // Beispiel: Display ein- und ausschalten
-    SSD1315_ClearScreen(&ssd1315_obj, SSD1315_COLOR_BLACK);
-    SSD1315_DisplayOff(&ssd1315_obj);
-    k_sleep(K_SECONDS(1));
+    SSD1315_Clear(&ssd1315_obj, SSD1315_COLOR_BLACK);
     SSD1315_DisplayOn(&ssd1315_obj);
     k_sleep(K_SECONDS(1));
 
@@ -123,11 +95,23 @@ int main(void) {
         }
     }
     SSD1315_Refresh(&ssd1315_obj);
+    k_sleep(K_SECONDS(2));
 
 
+    SSD1315_Clear(&ssd1315_obj, SSD1315_COLOR_BLACK);
+    for (uint32_t y = 0; y < SSD1315_LCD_PIXEL_HEIGHT; y++) {
+        for (uint32_t x = 0; x < SSD1315_LCD_PIXEL_WIDTH; x++) {
+            SSD1315_SetPixel(&ssd1315_obj, x, y, (x + y) % 4 ? SSD1315_COLOR_WHITE : SSD1315_COLOR_BLACK);
+        }
+    }
+    SSD1315_Refresh(&ssd1315_obj);
     k_sleep(K_SECONDS(3));
-    SSD1315_ClearScreen(&ssd1315_obj, SSD1315_COLOR_BLACK);
-    SSD1315_DrawNumberOne(&ssd1315_obj, 64, 32, SSD1315_COLOR_WHITE);
+
+
+
+
+    SSD1315_Clear(&ssd1315_obj, SSD1315_COLOR_BLACK);
+    SSD1315_DrawBitmap(&ssd1315_obj, 0, 0, hbrslogo_bits);
     SSD1315_Refresh(&ssd1315_obj);
 
     while (1) {
