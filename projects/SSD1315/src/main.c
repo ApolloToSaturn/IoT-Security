@@ -127,7 +127,7 @@ int main(void) {
 
     k_sleep(K_SECONDS(3));
     SSD1315_ClearScreen(&ssd1315_obj, SSD1315_COLOR_BLACK);
-    SSD1315_DrawNumberOne(&ssd1315_obj, 10, 10, SSD1315_COLOR_WHITE);
+    SSD1315_DrawNumberOne(&ssd1315_obj, 64, 32, SSD1315_COLOR_WHITE);
     SSD1315_Refresh(&ssd1315_obj);
 
     while (1) {
