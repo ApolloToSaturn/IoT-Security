@@ -113,6 +113,7 @@ __align(16) uint8_t  PhysFrameBuffer[SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_
 static int32_t SSD1315_ReadRegWrap(void *handle, uint16_t Reg, uint8_t* pData, uint16_t Length);
 static int32_t SSD1315_WriteRegWrap(void *handle, uint16_t Reg, uint8_t* pData, uint16_t Length);
 static int32_t SSD1315_IO_Delay(SSD1315_Object_t *pObj, uint32_t Delay);
+static void ssd1315_Clear(uint16_t ColorCode);
 /**
 * @}
 */
@@ -197,7 +198,7 @@ int32_t SSD1315_Init(SSD1315_Object_t *pObj, uint32_t ColorCoding, uint32_t Orie
     }
 
     // Clear the display buffer
-    SSD1315_Clear(pObj, SSD1315_COLOR_BLACK);
+    ssd1315_Clear(SSD1315_COLOR_BLACK);
     return ret;
 }
 
@@ -408,6 +409,7 @@ int32_t SSD1315_Refresh(SSD1315_Object_t *pObj)
   * @param  pBmp Bmp picture address.
   * @retval The component status.
   */
+
 int32_t SSD1315_DrawBitmap(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pBmp)
 {
   int32_t  ret = SSD1315_OK;
@@ -984,6 +986,24 @@ static int32_t SSD1315_WriteRegWrap(void *handle, uint16_t Reg, uint8_t* pData, 
 }
 
 /**
+  * @brief  Clear Display screen.
+  * @param  ColorCode the color use to clear the screen (SSD1315_COLOR_WHITE or SSD1315_COLOR_BLACK).
+  * @retval None
+  */
+static void ssd1315_Clear(uint16_t ColorCode)
+{
+  /* Check color */
+  if (ColorCode == SSD1315_COLOR_WHITE)
+  {
+    memset(PhysFrameBuffer, SSD1315_COLOR_WHITE, SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_NUMBER);
+  }
+  else
+  {
+    memset(PhysFrameBuffer, SSD1315_COLOR_BLACK, SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_NUMBER);
+  }
+}
+
+/**
   * @brief  SSD1315 delay.
   * @param  Delay Delay in ms.
   * @retval Component error status.
@@ -997,41 +1017,6 @@ static int32_t SSD1315_IO_Delay(SSD1315_Object_t *pObj, uint32_t Delay)
   }
   return SSD1315_OK;
 }
-
-
-
-
-// Custom Methods
-
-/**
-  * @brief  Clear Display screen.
-  * @param  ColorCode the color use to clear the screen (SSD1315_COLOR_WHITE or SSD1315_COLOR_BLACK).
-  * @retval None
-  */
-int32_t SSD1315_Clear(SSD1315_Object_t *pObj, uint16_t ColorCode)
-{
-    /* Überprüfen, ob das Objekt gültig ist */
-    if (pObj == NULL) {
-        return SSD1315_ERROR; // Kein gültiges Objekt, Fehler zurückgeben
-    }
-
-    /* Farbe des Framebuffers setzen */
-    if (ColorCode == SSD1315_COLOR_WHITE) {
-        memset(PhysFrameBuffer, SSD1315_COLOR_WHITE, SSD1315_LCD_COLUMN_NUMBER * SSD1315_LCD_PAGE_NUMBER);
-    } else if (ColorCode == SSD1315_COLOR_BLACK) {
-        memset(PhysFrameBuffer, SSD1315_COLOR_BLACK, SSD1315_LCD_COLUMN_NUMBER * SSD1315_LCD_PAGE_NUMBER);
-    } else {
-        return SSD1315_ERROR; // Ungültiger Farbcode, Fehler zurückgeben
-    }
-
-    /* Physikalisches Display mit aktualisierten Daten synchronisieren */
-    if (SSD1315_Refresh(pObj) != SSD1315_OK) {
-        return SSD1315_ERROR; // Fehler beim Aktualisieren des Displays
-    }
-
-    return SSD1315_OK; // Erfolg
-}
-
 
 /**
 * @}

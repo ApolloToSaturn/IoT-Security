@@ -91,7 +91,7 @@ typedef struct
   /* Drawing functions*/
   int32_t ( *SetCursor       ) (SSD1315_Object_t*, uint32_t, uint32_t);
   int32_t ( *DrawBitmap      ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t *);
-  int32_t ( *ShiftBitmap     ) (SSD1315_Object_t*, uint16_t, uint16_t, int16_t, int16_t, uint8_t*);
+  int32_t ( *ShiftBitmap     ) (SSD1315_Object_t*,uint16_t, uint16_t, int16_t, int16_t, uint8_t*);
   int32_t ( *FillRGBRect     ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t*, uint32_t, uint32_t);
   int32_t ( *DrawHLine       ) (SSD1315_Object_t*, uint32_t, uint32_t, uint32_t, uint32_t);
   int32_t ( *DrawVLine       ) (SSD1315_Object_t*, uint32_t, uint32_t, uint32_t, uint32_t);
@@ -174,9 +174,6 @@ int32_t SSD1315_SetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, u
 int32_t SSD1315_GetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t *Color);
 int32_t SSD1315_GetXSize(SSD1315_Object_t *pObj, uint32_t *XSize);
 int32_t SSD1315_GetYSize(SSD1315_Object_t *pObj, uint32_t *YSize);
-
-// Custom Methods
-int32_t SSD1315_Clear(SSD1315_Object_t *pObj, uint16_t ColorCode);
 
 /**
   * @}
