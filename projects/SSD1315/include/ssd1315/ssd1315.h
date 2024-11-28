@@ -174,6 +174,8 @@ int32_t SSD1315_SetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, u
 int32_t SSD1315_GetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t *Color);
 int32_t SSD1315_GetXSize(SSD1315_Object_t *pObj, uint32_t *XSize);
 int32_t SSD1315_GetYSize(SSD1315_Object_t *pObj, uint32_t *YSize);
+int32_t SSD1315_Clear(SSD1315_Object_t *pObj, uint16_t ColorCode);
+
 
 /**
   * @}

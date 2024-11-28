@@ -12,6 +12,7 @@ target_sources(app PRIVATE
 
 # Füge den neuen include-Pfad hinzu
 target_include_directories(app PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/include/ssd1315
 
     ${CMAKE_CURRENT_SOURCE_DIR}/../i2c_scanner/include

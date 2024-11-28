@@ -112,8 +112,6 @@ __align(16) uint8_t  PhysFrameBuffer[SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_
 */
 static int32_t SSD1315_ReadRegWrap(void *handle, uint16_t Reg, uint8_t* pData, uint16_t Length);
 static int32_t SSD1315_WriteRegWrap(void *handle, uint16_t Reg, uint8_t* pData, uint16_t Length);
-static int32_t SSD1315_IO_Delay(SSD1315_Object_t *pObj, uint32_t Delay);
-static void ssd1315_Clear(uint16_t ColorCode);
 /**
 * @}
 */
@@ -191,14 +189,13 @@ int32_t SSD1315_Init(SSD1315_Object_t *pObj, uint32_t ColorCoding, uint32_t Orie
 
     // Send initialization sequence
     for (uint16_t i = 0; i < sizeof(init_sequence); i++) {
-        ret += ssd1315_write_reg(&pObj->Ctx, 0x00, &init_sequence[i], 1);
-        if (ret != SSD1315_OK) {
+        if (ssd1315_write_reg(&pObj->Ctx, 0x00, &init_sequence[i], 1) != SSD1315_OK) {
             return SSD1315_ERROR;
         }
     }
 
     // Clear the display buffer
-    ssd1315_Clear(SSD1315_COLOR_BLACK);
+    SSD1315_Clear(pObj, SSD1315_COLOR_BLACK);
     return ret;
 }
 
@@ -412,80 +409,41 @@ int32_t SSD1315_Refresh(SSD1315_Object_t *pObj)
 
 int32_t SSD1315_DrawBitmap(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pBmp)
 {
-  int32_t  ret = SSD1315_OK;
-  uint32_t index = 0, size = 0;
-  uint32_t height = 0, width  = 0;
-  uint32_t x = 0, y  = 0, y0 = 0;
-  uint32_t XposBMP = 0, YposBMP  = 0;
+    int32_t ret = SSD1315_OK;
+    uint32_t height = 0, width = 0;
+    uint32_t byteWidth; // Breite in Bytes
+    uint32_t x, y;
 
-  /* Read bitmap size */
-  size = pBmp[2] + (pBmp[3] << 8) + (pBmp[4] << 16)  + (pBmp[5] << 24);
+    // Breite und Höhe der Bitmap auslesen (Header vorausgesetzt)
+    width = pBmp[18] + (pBmp[19] << 8) + (pBmp[20] << 16) + (pBmp[21] << 24);
+    height = pBmp[22] + (pBmp[23] << 8) + (pBmp[24] << 16) + (pBmp[25] << 24);
 
-  /* Get bitmap data address offset */
-  index = pBmp[10] + (pBmp[11] << 8) + (pBmp[12] << 16)  + (pBmp[13] << 24);
+    // Breite in Bytes (jede Zeile der Bitmap ist in Bytes gepackt)
+    byteWidth = (width + 7) / 8;
 
-  /* Read bitmap width */
-  width = pBmp[18] + (pBmp[19] << 8) + (pBmp[20] << 16)  + (pBmp[21] << 24);
+    // Bitmap-Daten beginnen nach dem Header
+    pBmp += pBmp[10] + (pBmp[11] << 8) + (pBmp[12] << 16) + (pBmp[13] << 24);
 
-  /* Read bitmap height */
-  height = pBmp[22] + (pBmp[23] << 8) + (pBmp[24] << 16)  + (pBmp[25] << 24);
-
-  /* Size conversion */
-  size = (size - index);
-
-  /* Apply offset to bypass header */
-  pBmp += index;
-
-  /* if bitmap cover whole screen */
-  if((Xpos == 0) && (Xpos == 0) & (size == (SSD1315_LCD_PIXEL_WIDTH * SSD1315_LCD_PIXEL_HEIGHT/8)))
-  {
-    memcpy(PhysFrameBuffer, pBmp, size);
-  }
-  else
-  {
-    x=Xpos+width;
-    y=Ypos+height;
-    y0 = Ypos;
-
-    for(; Xpos < x; Xpos++, XposBMP++)
+    for (y = 0; y < height; y++)
     {
-      for(Ypos = y0, YposBMP = 0; Ypos < y; Ypos++, YposBMP++)
-      {
-        /* if bitmap and screen are aligned on a Page */
-        if(((Ypos%8) == 0) && (y-Ypos >= 8) && ((YposBMP%8) == 0))
+        for (x = 0; x < width; x++)
         {
-          PhysFrameBuffer[Xpos+ (Ypos/8)*SSD1315_LCD_PIXEL_WIDTH] = pBmp[XposBMP+((YposBMP/8)*width)];
-          Ypos+=7;
-          YposBMP+=7;
-        }
-        else
-        {
-          /* Draw bitmap pixel per pixel */
-          if( (pBmp[XposBMP+((YposBMP/8)*width)]&(1<<(YposBMP%8))) != 0)
+            // Byte und Bit berechnen
+            uint32_t byteIndex = (y * byteWidth) + (x / 8);
+            uint8_t bitIndex = 7 - (x % 8);
+
+            // Pixelwert auslesen (1 = Weiß, 0 = Schwarz)
+            uint8_t pixel = (pBmp[byteIndex] >> bitIndex) & 0x01;
+
+            // Pixel auf dem Display setzen
+            if (SSD1315_SetPixel(pObj, Xpos + x, Ypos + y, pixel ? SSD1315_COLOR_WHITE : SSD1315_COLOR_BLACK) != SSD1315_OK)
             {
-              if (SSD1315_SetPixel(pObj, Xpos, Ypos, SSD1315_COLOR_WHITE) != SSD1315_OK)
-              {
                 ret = SSD1315_ERROR;
-                break;
-              }
-            }
-            else
-            {
-              if (SSD1315_SetPixel(pObj, Xpos, Ypos, SSD1315_COLOR_BLACK) != SSD1315_OK)
-                {
-                  ret = SSD1315_ERROR;
-                  break;
-                }
             }
         }
-      }
     }
-  }
-  if(ret != SSD1315_OK)
-   {
-     ret = SSD1315_ERROR;
-   }
-  return ret;
+
+    return ret;
 }
 
 /**
@@ -723,6 +681,10 @@ int32_t SSD1315_FillRect(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, u
   */
 int32_t SSD1315_SetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Color)
 {
+  if (Xpos >= SSD1315_LCD_PIXEL_WIDTH || Ypos >= SSD1315_LCD_PIXEL_HEIGHT) {
+    return SSD1315_ERROR; // Ungültige Position
+  }
+
   int32_t  ret = SSD1315_OK;
   /* Prevent unused argument(s) compilation warning */
   (void)(pObj);
@@ -986,36 +948,29 @@ static int32_t SSD1315_WriteRegWrap(void *handle, uint16_t Reg, uint8_t* pData, 
 }
 
 /**
-  * @brief  Clear Display screen.
-  * @param  ColorCode the color use to clear the screen (SSD1315_COLOR_WHITE or SSD1315_COLOR_BLACK).
-  * @retval None
+  * @brief  Clear the entire display.
+  * @param  pObj Component object.
+  * @param  ColorCode The color to clear the display with (SSD1315_COLOR_WHITE or SSD1315_COLOR_BLACK).
+  * @retval Component status.
   */
-static void ssd1315_Clear(uint16_t ColorCode)
+int32_t SSD1315_Clear(SSD1315_Object_t *pObj, uint16_t ColorCode)
 {
-  /* Check color */
-  if (ColorCode == SSD1315_COLOR_WHITE)
-  {
-    memset(PhysFrameBuffer, SSD1315_COLOR_WHITE, SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_NUMBER);
-  }
-  else
-  {
-    memset(PhysFrameBuffer, SSD1315_COLOR_BLACK, SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_NUMBER);
-  }
-}
+    int32_t ret = SSD1315_OK;
 
-/**
-  * @brief  SSD1315 delay.
-  * @param  Delay Delay in ms.
-  * @retval Component error status.
-  */
-static int32_t SSD1315_IO_Delay(SSD1315_Object_t *pObj, uint32_t Delay)
-{
-  uint32_t tickstart;
-  tickstart = pObj->IO.GetTick();
-  while((pObj->IO.GetTick() - tickstart) < Delay)
-  {
-  }
-  return SSD1315_OK;
+    /* Check color and clear the frame buffer */
+    if (ColorCode == SSD1315_COLOR_WHITE)
+    {
+        memset(PhysFrameBuffer, 0xFF, SSD1315_LCD_COLUMN_NUMBER * SSD1315_LCD_PAGE_NUMBER);
+    }
+    else
+    {
+        memset(PhysFrameBuffer, 0x00, SSD1315_LCD_COLUMN_NUMBER * SSD1315_LCD_PAGE_NUMBER);
+    }
+
+    /* Refresh the display to apply the clear operation */
+    ret = SSD1315_Refresh(pObj);
+
+    return ret;
 }
 
 /**
