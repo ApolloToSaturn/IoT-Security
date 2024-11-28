@@ -4,6 +4,7 @@ project(ssd1315_display)
 
 target_sources(app PRIVATE
     src/main.c
+    src/draw.c
     drivers/ssd1315/ssd1315.c
     drivers/ssd1315/ssd1315_reg.c
     drivers/ssd1315/i2c_helper.c
