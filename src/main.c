@@ -87,21 +87,16 @@ int main(void) {
     }
 
     LOG_INF("SSD1315 initialized successfully");
-
-    // Beispiel: Display ein- und ausschalten
-    SSD1315_ClearScreen(&ssd1315_obj, SSD1315_COLOR_BLACK);
     SSD1315_DisplayOff(&ssd1315_obj);
-    k_sleep(K_SECONDS(1));
     SSD1315_DisplayOn(&ssd1315_obj);
-    k_sleep(K_SECONDS(1));
 
+    SSD1315_DrawBitmap2(&ssd1315_obj, 0, 0, hbrslogo_bits); 
 
-    SSD1315_DrawBitmap(&ssd1315_obj, 0, 0, hbrslogo_bits);
-    
     SSD1315_Refresh(&ssd1315_obj);
 
-    while (1) {
-        k_sleep(K_SECONDS(1));
+    while (1)
+    {
+        k_sleep(K_SECONDS(5)); // 5 Sekunden warten
     }
 
     return 0;

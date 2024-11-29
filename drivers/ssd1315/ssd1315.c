@@ -80,6 +80,7 @@ SSD1315_Drv_t   SSD1315_Driver =
   SSD1315_ScrollingStop,
   SSD1315_SetCursor,
   SSD1315_DrawBitmap,
+  SSD1315_DrawBitmap2,
   SSD1315_ShiftBitmap,
   SSD1315_FillRGBRect,
   SSD1315_DrawHLine,
@@ -488,6 +489,44 @@ int32_t SSD1315_DrawBitmap(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos,
   return ret;
 }
 
+int32_t SSD1315_DrawBitmap2(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pBmp)
+{
+    int32_t ret = SSD1315_OK;
+    uint32_t height = 0, width = 0;
+    uint32_t byteWidth; // Breite in Bytes
+    uint32_t x, y;
+
+    // Breite und Höhe der Bitmap auslesen (Header vorausgesetzt)
+    width = pBmp[18] + (pBmp[19] << 8) + (pBmp[20] << 16) + (pBmp[21] << 24);
+    height = pBmp[22] + (pBmp[23] << 8) + (pBmp[24] << 16) + (pBmp[25] << 24);
+
+    // Breite in Bytes (jede Zeile der Bitmap ist in Bytes gepackt)
+    byteWidth = (width + 7) / 8;
+
+    // Bitmap-Daten beginnen nach dem Header
+    pBmp += pBmp[10] + (pBmp[11] << 8) + (pBmp[12] << 16) + (pBmp[13] << 24);
+
+    for (y = 0; y < height; y++)
+    {
+        for (x = 0; x < width; x++)
+        {
+            // Byte und Bit berechnen
+            uint32_t byteIndex = (y * byteWidth) + (x / 8);
+            uint8_t bitIndex = 7 - (x % 8);
+
+            // Pixelwert auslesen (1 = Weiß, 0 = Schwarz)
+            uint8_t pixel = (pBmp[byteIndex] >> bitIndex) & 0x01;
+
+            // Pixel auf dem Display setzen
+            if (SSD1315_SetPixel(pObj, Xpos + x, Ypos + y, pixel ? SSD1315_COLOR_WHITE : SSD1315_COLOR_BLACK) != SSD1315_OK)
+            {
+                ret = SSD1315_ERROR;
+            }
+        }
+    }
+
+    return ret;
+}
 /**
   * @brief  Shift and Displays a bitmap picture loaded in the internal Flash.
   * @param  pObj Component object.
@@ -1017,7 +1056,6 @@ static int32_t SSD1315_IO_Delay(SSD1315_Object_t *pObj, uint32_t Delay)
   }
   return SSD1315_OK;
 }
-
 /**
 * @}
 */

@@ -91,7 +91,8 @@ typedef struct
   /* Drawing functions*/
   int32_t ( *SetCursor       ) (SSD1315_Object_t*, uint32_t, uint32_t);
   int32_t ( *DrawBitmap      ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t *);
-  int32_t ( *ShiftBitmap     ) (SSD1315_Object_t*,uint16_t, uint16_t, int16_t, int16_t, uint8_t*);
+  int32_t ( *DrawBitmap2     ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t *); 
+  int32_t ( *ShiftBitmap     ) (SSD1315_Object_t*, uint16_t, uint16_t, int16_t, int16_t, uint8_t*);
   int32_t ( *FillRGBRect     ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t*, uint32_t, uint32_t);
   int32_t ( *DrawHLine       ) (SSD1315_Object_t*, uint32_t, uint32_t, uint32_t, uint32_t);
   int32_t ( *DrawVLine       ) (SSD1315_Object_t*, uint32_t, uint32_t, uint32_t, uint32_t);
@@ -164,6 +165,7 @@ int32_t SSD1315_ScrollingStop(SSD1315_Object_t *pObj);
 
 int32_t SSD1315_SetCursor(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos);
 int32_t SSD1315_DrawBitmap(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pBmp);
+int32_t SSD1315_DrawBitmap2(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pBmp);
 int32_t SSD1315_ShiftBitmap(SSD1315_Object_t *pObj,uint16_t Xpos, uint16_t Ypos, int16_t Xshift, int16_t Yshift, uint8_t *pbmp);
 int32_t SSD1315_FillRGBRect(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pData, uint32_t Width, uint32_t Height);
 int32_t SSD1315_DrawHLine(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Length, uint32_t Color);
@@ -174,7 +176,6 @@ int32_t SSD1315_SetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, u
 int32_t SSD1315_GetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t *Color);
 int32_t SSD1315_GetXSize(SSD1315_Object_t *pObj, uint32_t *XSize);
 int32_t SSD1315_GetYSize(SSD1315_Object_t *pObj, uint32_t *YSize);
-
 /**
   * @}
   */
