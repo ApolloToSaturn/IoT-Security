@@ -1,5 +1,10 @@
 {
     "files.associations": {
         "zephyr.h": "c"
-    }
+    },
+    "nrf-connect.applications": [
+        "${workspaceFolder}\\i2c_scanner",
+        "${workspaceFolder}\\SSD1315",
+        "${workspaceFolder}\\vl53l0x"
+    ]
 }
