@@ -13,8 +13,6 @@
 
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
-const struct device *i2c_dev = DEVICE_DT_GET(DT_NODELABEL(i2c2));
-
 // SSD1315-Objekt und IO-Struktur
 SSD1315_Object_t ssd1315_obj;
 SSD1315_IO_t ssd1315_io = {
@@ -52,13 +50,11 @@ int main(void) {
     k_sleep(K_SECONDS(2));
 
     draw_random_pattern(&ssd1315_obj);
-    k_sleep(K_SECONDS(3));
+    k_sleep(K_SECONDS(2));
 
     draw_hbrs_logo(&ssd1315_obj);
+    k_sleep(K_SECONDS(2));
 
-    while (1) {
-        k_sleep(K_SECONDS(1));
-    }
-
+    LOG_INF("Ending SSD1315 application");
     return 0;
 }
