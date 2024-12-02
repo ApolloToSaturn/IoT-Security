@@ -1,0 +1,13 @@
+# Target labels
+ SSD1306
+# Source files and their labels
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/CMakeFiles/SSD1306
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/CMakeFiles/SSD1306.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/CMakeFiles/SSD1306-complete.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/SSD1306-prefix/src/SSD1306-stamp/SSD1306-build.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/SSD1306-prefix/src/SSD1306-stamp/SSD1306-configure.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/SSD1306-prefix/src/SSD1306-stamp/SSD1306-download.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/SSD1306-prefix/src/SSD1306-stamp/SSD1306-install.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/SSD1306-prefix/src/SSD1306-stamp/SSD1306-mkdir.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/SSD1306-prefix/src/SSD1306-stamp/SSD1306-patch.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/_sysbuild/sysbuild/images/SSD1306-prefix/src/SSD1306-stamp/SSD1306-update.rule

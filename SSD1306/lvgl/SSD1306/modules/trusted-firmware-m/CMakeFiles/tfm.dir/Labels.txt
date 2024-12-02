@@ -1,0 +1,13 @@
+# Target labels
+ tfm
+# Source files and their labels
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/CMakeFiles/tfm
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/CMakeFiles/tfm.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/CMakeFiles/tfm-complete.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-build.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-configure.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-download.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-install.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-mkdir.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-patch.rule
+E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/modules/trusted-firmware-m/tfm-prefix/src/tfm-stamp/tfm-update.rule

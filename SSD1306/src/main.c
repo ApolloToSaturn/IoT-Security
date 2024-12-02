@@ -1,88 +1,125 @@
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/display.h>
+#include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/adc.h>
 #include <zephyr/logging/log.h>
-#include "i2c_scanner.h"
+#include <lvgl.h>
+#include <stdio.h>
 
-LOG_MODULE_REGISTER(ssd1315_display, LOG_LEVEL_INF);
+LOG_MODULE_REGISTER(sensortest, LOG_LEVEL_INF);
 
-// Bitmap für "Hello World"
-static const uint8_t hello_world_bitmap[] = {
-    0x7E, 0x81, 0x95, 0x81, 0x95, 0x81, 0x7E, 0x00, // H
-    0x00, 0x00, 0x00, 0x7F, 0x40, 0x40, 0x40, 0x00, // E
-    0x7E, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x00, // L
-    0x7E, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x00, // L
-    0x3C, 0x42, 0x81, 0x81, 0x81, 0x42, 0x3C, 0x00, // O
-    0x00, 0x00, 0x00, 0x08, 0x08, 0x08, 0x00, 0x00, // SPACE
-    0x81, 0x81, 0x81, 0x81, 0x81, 0x42, 0x3C, 0x00, // W
-    0x3C, 0x42, 0x81, 0x81, 0x81, 0x42, 0x3C, 0x00, // O
-    0x7F, 0x81, 0x91, 0x91, 0x91, 0x91, 0x61, 0x00, // R
-    0x7E, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x00, // L
-    0x7F, 0x81, 0x81, 0x81, 0x81, 0x81, 0x7E, 0x00  // D
+#define SOIL_MOISTURE_GPIO_NODE DT_NODELABEL(soil_moisture_gpio)
+#define SOIL_MOISTURE_ADC_NODE DT_NODELABEL(soil_moisture_adc)
+#define ADC_RESOLUTION 12
+#define ADC_CHANNEL DT_IO_CHANNELS_INPUT(SOIL_MOISTURE_ADC_NODE)
+
+static const struct gpio_dt_spec soil_moisture_gpio = GPIO_DT_SPEC_GET(SOIL_MOISTURE_GPIO_NODE, gpios);
+static const struct adc_dt_spec soil_moisture_adc = ADC_DT_SPEC_GET(SOIL_MOISTURE_ADC_NODE);
+static const struct device *display_dev;
+
+static int16_t sample_buffer[1];
+
+struct adc_sequence sequence = {
+    .buffer = sample_buffer,
+    .buffer_size = sizeof(sample_buffer),
 };
 
-// Globales Array für den Display-Puffer
-static uint8_t buf[128 * 8] = {0}; // Platz für eine Zeile mit 128 Pixel Breite
-
-// Puffer für ein leeres Display (alle Pixel aus)
-static uint8_t clear_buf[128 * 64 / 8] = {0}; // Für ein 128x64-Display
-
-void clear_display(const struct device *display_dev) {
-    struct display_buffer_descriptor desc = {
-        .buf_size = sizeof(clear_buf),
-        .width = 128, // Breite des Displays
-        .height = 64, // Höhe des Displays
-        .pitch = 128  // Breite in Pixeln
-    };
-
-    // Schreibe den leeren Puffer auf das gesamte Display
-    int ret = display_write(display_dev, 0, 0, &desc, clear_buf);
-    if (ret < 0) {
-        LOG_ERR("Failed to clear display (error %d)", ret);
-    } else {
-        LOG_INF("Display cleared");
+static int init_display(void) {
+    display_dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_display));
+    if (!device_is_ready(display_dev)) {
+        LOG_ERR("Display not ready");
+        return -1;
     }
+    display_blanking_off(display_dev);
+    return 0;
 }
 
-int main(void) {
-    // I2C-Scanner aufrufen
-    i2c_scan();
+static void init_lvgl(void) {
+    lv_init();
+    lv_task_handler();
+}
 
-    // Display-Gerät initialisieren
-    const struct device *display_dev = DEVICE_DT_GET(DT_NODELABEL(ssd1315));
+int main(void)
+{
+    int ret;
+    int32_t adc_value;
+    char display_text[64];
 
-    if (!device_is_ready(display_dev)) {
-        LOG_ERR("Display device not ready");
+    if (init_display() < 0) {
         return -1;
     }
 
-    LOG_INF("Display device is ready");
+    init_lvgl();
 
-    // Display einschalten und Helligkeit setzen
-    display_blanking_off(display_dev);
-    LOG_INF("Display turned on");
-    clear_display(display_dev);
-    display_set_contrast(display_dev, 0xFF); // Maximale Helligkeit
-    LOG_INF("Display contrast set");
+    // Hier Widgets erstellen und Logik implementieren
+    lv_obj_clean(lv_scr_act());
+    lv_obj_t *label = lv_label_create(lv_scr_act());
+    lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
 
-    // Kopiere die Bitmap in den Puffer
-    memcpy(buf, hello_world_bitmap, sizeof(hello_world_bitmap));
+    // GPIO Konfiguration
+    if (!device_is_ready(soil_moisture_gpio.port)) {
+        LOG_ERR("Error: Soil moisture GPIO device is not ready");
+        return -1;
+    }
 
-    // Puffer auf das Display schreiben
-    struct display_buffer_descriptor desc = {
-        .buf_size = sizeof(buf),
-        .width = 128,
-        .height = 8, // Höhe für eine Zeile
-        .pitch = 128
-    };
+    ret = gpio_pin_configure_dt(&soil_moisture_gpio, GPIO_INPUT);
+    if (ret != 0) {
+        LOG_ERR("Error: failed to configure GPIO");
+        return -1;
+    }
 
-    int ret = display_write(display_dev, 0, 0, &desc, buf); // Ab (0,0) schreiben
-    if (ret < 0) {
-        LOG_ERR("Failed to write to display (error %d)", ret);
+    // ADC Konfiguration
+    if (!device_is_ready(soil_moisture_adc.dev)) {
+        LOG_ERR("Error: ADC device is not ready");
+        return -1;
+    }
+
+    ret = adc_channel_setup_dt(&soil_moisture_adc);
+    if (ret != 0) {
+        LOG_ERR("Error: failed to setup ADC channel, error code: %d", ret);
         return ret;
     }
 
-    LOG_INF("Hello World written to display");
+    while (1) {
+        lv_task_handler();
+        // Digitalen Wert lesen
+        int digital_val = gpio_pin_get_dt(&soil_moisture_gpio);
+        
+        // Analogen Wert lesen
+        ret = adc_sequence_init_dt(&soil_moisture_adc, &sequence);
+        if (ret != 0) {
+            LOG_ERR("Error: failed to initialize ADC sequence");
+            continue;
+        }
+
+        ret = adc_read(soil_moisture_adc.dev, &sequence);
+        if (ret == 0) {
+            int32_t adc_value = sample_buffer[0];
+            int32_t millivolts = 0;
+            ret = adc_raw_to_millivolts_dt(&soil_moisture_adc, &millivolts);
+            if (ret != 0) {
+                LOG_ERR("Error: failed to convert ADC raw value to millivolts");
+            } else {
+                LOG_INF("Digital: %s, Analog raw: %d, Analog: %d mV", 
+                    digital_val == 0 ? "Moist" : "Dry", 
+                    adc_value,
+                    millivolts);
+                int32_t reference_mv = adc_ref_internal(soil_moisture_adc.dev);
+                int32_t millivolts = (adc_value * reference_mv) / (1 << soil_moisture_adc.resolution);
+                LOG_INF("Manual conversion: %d mV", millivolts);
+                snprintf(display_text, sizeof(display_text), 
+                    "Digital: %s\nAnalog: %d mV", 
+                    digital_val == 0 ? "Moist" : "Dry", 
+                    millivolts);
+                lv_label_set_text(label, display_text);
+            }
+        } else {
+            LOG_ERR("Error reading ADC");
+        }
+
+        k_sleep(K_SECONDS(5));
+    }
 
     return 0;
 }

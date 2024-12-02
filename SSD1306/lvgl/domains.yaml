@@ -1,0 +1,7 @@
+default: SSD1306
+build_dir: E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl
+domains:
+  - name: SSD1306
+    build_dir: E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306
+flash_order:
+  - SSD1306

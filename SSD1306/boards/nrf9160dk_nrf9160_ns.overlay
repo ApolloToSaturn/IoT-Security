@@ -1,16 +1,57 @@
-&i2c2 {
-    zephyr,concat-buf-size = <2048>; // Erhöht die Puffergröße auf 256 Bytes
-    ssd1315: ssd1315@3c {
-        compatible = "solomon,ssd1306fb";  // Treiberkompatibilität
-        reg = <0x3C>;                   // I2C-Adresse des Displays
+&adc {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    status = "okay";
+    channel@2 {
+        reg = <2>;
+        zephyr,gain = "ADC_GAIN_1_2";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,input-positive = <NRF_SAADC_AIN2>;
+        zephyr,resolution = <12>;
+    };
+};
 
-        height = <64>;
-        width = <128>;
-        segment-offset = <0x00>;       // Spalten-Offset
-        page-offset = <0x00>;          // Seiten-Offset
-        display-offset = <0x00>;       // Anzeige-Offset
-        multiplex-ratio = <0x3F>;      // Multiplex-Ratio (64 Zeilen)
-        prechargep = <2>;              // Dauer der Pre-Charge-Periode
-        ready-time-ms = <10>;          // Zeit bis das Display bereit ist
+&i2c2 {
+	compatible = "nordic,nrf-twim";
+	status = "okay";
+	clock-frequency = <I2C_BITRATE_FAST>;
+	zephyr,concat-buf-size = <1024>;  // Puffergröße auf 640 Bytes setzen
+    zephyr,flash-buf-max-size = <1024>; // Maximalgröße für Flash-Schreibvorgänge
+    
+  
+	ssd1315: ssd1315@3c {
+		compatible = "solomon,ssd1306fb";
+		reg = <0x3c>;
+		width = <128>;
+		height = <64>;
+		segment-offset = <0>;
+		page-offset = <0>;
+		display-offset = <0>;
+		multiplex-ratio = <63>;
+		segment-remap;
+		com-invdir;
+		prechargep = <0x22>;
+	};
+};
+
+/ {
+	chosen {
+		zephyr,display = &ssd1315;
+	};
+
+    soil_moisture_sensor {
+        compatible = "gpio-keys";
+        soil_moisture_gpio: soil_moisture_gpio {
+            gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
+            label = "Soil Moisture Sensor Digital";
+        };
+    };
+    
+    soil_moisture_adc: soil_moisture_adc {
+        compatible = "adc-keys";
+        io-channels = <&adc 2>;
+        label = "Soil Moisture Sensor Analog";
+		keyup-threshold-mv = <600>;  
     };
 };

@@ -1,0 +1,2 @@
+"nrf":"E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/nrf":"E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/nrf/sysbuild"
+"mcuboot":"E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/bootloader/mcuboot":"E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/bootloader/mcuboot/boot/zephyr/sysbuild"

@@ -1,0 +1,55 @@
+cmake:
+  application:
+    configuration-dir: E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306
+    source-dir: E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306
+  board:
+    name: nrf9160dk
+    qualifiers: nrf9160/ns
+    revision: 0.14.0
+  devicetree:
+    bindings-dirs:
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/nrf/dts/bindings
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/boards/nordic/nrf9160dk/dts/bindings
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/bindings
+    files:
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/boards/nordic/nrf9160dk/nrf9160dk_nrf9160_ns.dts
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/boards/nordic/nrf9160dk/nrf9160dk_nrf9160_ns_0_14_0.overlay
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/boards/shields/ssd1306/ssd1306_128x64.overlay
+     - E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/boards/nrf9160dk_nrf9160_ns.overlay
+    include-dirs:
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/nrf/include
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/nrf/dts
+     - E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/include
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/boards/nordic/nrf9160dk/dts
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/include
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/include/zephyr
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/common
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/x86
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/xtensa
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/sparc
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/riscv
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/posix
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/nios2
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/arm64
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/arm
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts/arc
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/dts
+    user-files:
+     - E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/boards/nrf9160dk_nrf9160_ns.overlay
+  kconfig:
+    files:
+     - E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/boards/nordic/nrf9160dk/nrf9160dk_nrf9160_ns_defconfig
+     - E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/prj.conf
+     - E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/lvgl/SSD1306/zephyr/.config.sysbuild
+    user-files:
+     - E:/Uni/WS2425/IoT_Security/NRF/Projekt/SSD1306/prj.conf
+  toolchain:
+    name: zephyr
+    path: E:/Uni/WS2425/IoT_Security/NRF/toolchains/2d382dcd92/opt/zephyr-sdk
+  vendor-specific:
+    nordic:
+      svdfile: E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/modules/hal/nordic/nrfx/mdk/nrf9160.svd
+  zephyr:
+    version: 3.7.99
+    zephyr-base: E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr
+version: 0.1.0
