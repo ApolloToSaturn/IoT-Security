@@ -1,2 +1,0 @@
-# Load board Kconfig descriptions.
-osource "E:/Uni/WS2425/IoT_Security/NRF/v2.8.0/zephyr/boards/nordic/nrf9160dk/Kconfig.nrf9160dk"

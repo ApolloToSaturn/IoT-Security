@@ -1,6 +1,9 @@
 {
     "files.associations": {
-        "zephyr.h": "c"
+        "zephyr.h": "c",
+        "kernel.h": "c",
+        "stdio.h": "c",
+        "log.h": "c"
     },
     "nrf-connect.applications": [
         "${workspaceFolder}\\i2c_scanner",

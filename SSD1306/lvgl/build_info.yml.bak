@@ -1,5 +1,0 @@
-west:
-  command: E:\Uni\WS2425\IoT_Security\NRF\toolchains\2d382dcd92\opt\bin\Scripts\west
-    build -b nrf9160dk/nrf9160/ns -d lvgl -p --pristine
-  topdir: e:\Uni\WS2425\IoT_Security\NRF\v2.8.0
-  version: 1.2.0
