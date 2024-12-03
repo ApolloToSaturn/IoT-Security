@@ -34,10 +34,16 @@ int read_gpio(void) {
 }
 
 int init_adc(void) {
-    if (!device_is_ready(soil_moisture_adc.dev)) {
+    if (!adc_is_ready_dt(&soil_moisture_adc)) {
         LOG_ERR("Error: ADC device is not ready");
-        return !device_is_ready(soil_moisture_adc.dev);
+        return !adc_is_ready_dt(&soil_moisture_adc);
     }
+
+    LOG_INF("ADC Device: %s", soil_moisture_adc.dev->name);
+    LOG_INF("Channel ID: %d", soil_moisture_adc.channel_id);
+    LOG_INF("Resolution: %d", soil_moisture_adc.resolution);
+    LOG_INF("Oversampling: %d", soil_moisture_adc.oversampling);
+    LOG_INF("Vref (mV): %d", soil_moisture_adc.vref_mv);
 
     int ret = adc_channel_setup_dt(&soil_moisture_adc);
     if (ret != 0) {
@@ -64,10 +70,11 @@ int32_t read_adc(void) {
     int32_t adc_value = sample_buffer[0];
     int32_t millivolts = 0;
 
-    ret = adc_raw_to_millivolts_dt(&soil_moisture_adc, &millivolts);
-    if (ret != 0) {
-        LOG_ERR("Error converting ADC raw value to millivolts");
-        return -1;
+    ret = adc_raw_to_millivolts(600, ADC_GAIN_1_6, 12, &millivolts);
+    if (ret == 0) {
+        LOG_INF("Converted value: %d mV", millivolts);
+    } else {
+        LOG_ERR("Conversion failed with error: %d", ret);
     }
 
     int32_t reference_mv = adc_ref_internal(soil_moisture_adc.dev);
@@ -76,6 +83,13 @@ int32_t read_adc(void) {
     LOG_INF("Analog raw: %d, Converted: %d mV (Manual conversion: %d mV)",
         adc_value, millivolts, millivolts_man);
 
-    return adc_value;
+    int32_t reference_miv = 600; // Interne Referenzspannung (0,6V) in mV
+    int32_t gain_factor = 6;    // Für ADC_GAIN_1_6 (anpassen, falls geändert)
+    int32_t millivolts_manual = (adc_value * reference_miv * gain_factor) / (1 << soil_moisture_adc.resolution);
+    LOG_INF("Manually calculated voltage: %d mV", millivolts_manual);
+
+    LOG_INF("INTERNE: %d", adc_ref_internal(soil_moisture_adc.dev));
+
+    return millivolts_manual;
 }
 

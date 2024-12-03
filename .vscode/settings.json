@@ -8,6 +8,8 @@
     "nrf-connect.applications": [
         "${workspaceFolder}\\i2c_scanner",
         "${workspaceFolder}\\SSD1315",
-        "${workspaceFolder}\\vl53l0x"
-    ]
+        "${workspaceFolder}\\vl53l0x",
+        "${workspaceFolder}\\DisplaySensor"
+    ],
+    "cmake.sourceDirectory": "E:/DisplaySensor/DisplaySensor"
 }
